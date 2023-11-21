@@ -58,3 +58,9 @@ text-align: left;
 
 main .features_2 p { max-width: 1000px; margin: 20px auto;
 }
+
+form {
+margin-left: 15%;
+width: 800px;
+margin-top: 50px;
+}
