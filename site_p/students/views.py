@@ -1,10 +1,15 @@
 from django.shortcuts import render, redirect
-from .models import Articles
+from .models import Articles, Tasks
 from .forms import ArticlesForm
 
-def students_home (request):
+
+def students_home(request):
     students = Articles.objects.order_by('name_student')
     return render(request, 'students/students_home.html', {'students': students})
+def tasks_home(request):
+    tasks = Tasks.objects.order_by('number_tasks')
+    return render(request, 'students/tasks_home.html', {'tasks': tasks})
+
 
 def create(request):
     error = ''

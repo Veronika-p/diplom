@@ -21,15 +21,29 @@
             <a href="{% url 'home'%}"><li><i class="fas fa-home" style="color: #000000;"></i> Главная</li></a>
             <a href="#"><li><i class="fas fa-bookmark" style="color: #000000;"></i> Тесты</li></a>
             <a href="{% url 'students_home'%}"><li><i class="fas fa-users" style="color: #000000;"></i> Ученики</li></a>
+            <a href="{% url 'tasks_home'%}"><li><i class="fas fa-tasks" style="color: #000000;"></i> Задания</li></a>
             <a href="#"><li><i class="fas fa-chart-line" style="color: #000000;"></i> Статистика</li></a>
             <a href="{% url 'about'%}"><li><i class="fas fa-info" style="color: #000000;"></i> О программе</li></a>
+            <a href="{% url 'register'%}"><li><i class="fas fa-cash-register" style="color: #000000;"></i> Регистрация</li></a>
             <a href="{% url 'create'%}"><li><button class="btn btn-info"><i class="fas fa-plus-circle" style="color: #000000;"></i> Добавить ученика</button></li></a>
         </ul>
     </aside>
-    <main>
-        {% block content %}
-        {% endblock %}
-
+     <main role="main" class="container">
+      <div class="">
+        <div class="">
+          {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+          {% block content %}{% endblock %}
+        </div>
+        <div class="">
+          <div class=""></div>
+        </div>
+      </div>
     </main>
 
 </body>
